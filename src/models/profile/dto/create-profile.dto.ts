@@ -12,6 +12,8 @@ export class CreateProfileDto implements ProfileInterface {
   name: string;
 
   @ApiProperty()
+  @IsOptional()
+  @IsUUID('all')
   pictureId: string;
 
   @ApiProperty({ default: false })
