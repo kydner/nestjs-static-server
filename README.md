@@ -1,14 +1,13 @@
 <p align="center">
-Nestjs Server side
+Nestjs Static Server
 </p>
 ## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+sdfsdf
 
 ## Installation
 
 ```bash
-$ npm install
+$ yarn
 ```
 
 ## Running the app
