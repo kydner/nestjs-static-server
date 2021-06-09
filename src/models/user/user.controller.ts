@@ -37,17 +37,12 @@ export class UserController {
 
   @Get(':id')
   @UseGuards(JwtAuthGuard)
-  async findOne(@AuthUser() response, @Param('id') id: string): Promise<User> {
-    if (id === 'me') return response;
+  async findOne(@AuthUser() user, @Param('id') id: string): Promise<User> {
+    if (id === 'me') return user;
     const data = await this.userService.findOne(id);
     if (data) return data;
     throw new HttpException('No data', HttpStatus.NO_CONTENT);
   }
-  // @Get('/me')
-  // @UseGuards(JwtAuthGuard)
-  // async me(@AuthUser() response, @Req() req): Promise<User> {
-  //   return { ...response, token: req };
-  // }
 
   @Patch(':id')
   update(

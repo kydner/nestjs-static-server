@@ -23,11 +23,11 @@ export class UserService {
   }
 
   async findAll(): Promise<User[]> {
-    return await this.repository.find({ relations: ['branch'] });
+    return await this.repository.find();
   }
 
   async findOne(id: string) {
-    return await this.repository.findOne(id, { relations: ['branch'] });
+    return await this.repository.findOne(id);
   }
 
   async findUser(username: string): Promise<User> {

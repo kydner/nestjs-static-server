@@ -1,4 +1,4 @@
-import { Column } from 'typeorm';
+import { Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 
 export class BaseEntity {
   @Column()
@@ -7,9 +7,9 @@ export class BaseEntity {
   @Column()
   updatedBy: string;
 
-  @Column()
+  @CreateDateColumn()
   createdOn: Date;
 
-  @Column()
+  @UpdateDateColumn()
   updatedOn: Date;
 }
