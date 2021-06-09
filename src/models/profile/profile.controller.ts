@@ -23,8 +23,14 @@ export class ProfileController {
 
   @Post()
   @UseGuards(JwtAuthGuard)
-  create(@Body() createProfileDto: CreateProfileDto, @AuthUser() user) {
-    return this.profileService.create(createProfileDto, user);
+  async create(@Body() createProfileDto: CreateProfileDto, @AuthUser() user) {
+    try {
+      const data = await this.profileService.create(createProfileDto, user);
+      if (data) return data;
+      else throw 'error';
+    } catch (error) {
+      return error;
+    }
   }
 
   @Get()
@@ -50,7 +56,13 @@ export class ProfileController {
 
   @Delete(':id')
   @UseGuards(JwtAuthGuard)
-  remove(@Param('id') id: string) {
-    return this.profileService.remove(id);
+  async remove(@Param('id') id: string) {
+    try {
+      const data = await this.profileService.remove(id);
+      if (data) return data;
+      else throw 'error';
+    } catch (error) {
+      return error;
+    }
   }
 }
