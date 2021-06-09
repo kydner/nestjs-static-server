@@ -1,0 +1,15 @@
+export interface UserInterface {
+  id: string;
+
+  username: string;
+
+  email: string;
+
+  password: string;
+
+  firstName: string;
+
+  lastName: string;
+
+  isActive: boolean;
+}
