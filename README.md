@@ -51,3 +51,19 @@ $ yarn test:e2e
 # test coverage
 $ yarn test:cov
 ```
+
+## Store Credential Git
+
+```bash
+# get url of your git when inside working dir :
+
+git config remote.origin.url
+
+then :
+
+git config credential.helper store
+
+git push "url of your git"
+
+will ask username and password last one time
+```
